@@ -1,5 +1,5 @@
 "use strict";
-/* AUDIT PROBE --?adversarial measurements. Does not modify plaza-aeterna.html. */
+/* AUDIT PROBE — adversarial measurements. Does not modify plaza-aeterna.html. */
 const {spawn}=require("child_process");
 function PLAZA_TARGET(){var c=[path.resolve(__dirname,"..","plaza-aeterna.html"),path.resolve(__dirname,"..","index.html")];for(var i=0;i<c.length;i++)if(fs.existsSync(c[i]))return c[i];return c[0]}
 const fs=require("fs"),path=require("path"),http=require("http"),os=require("os");
