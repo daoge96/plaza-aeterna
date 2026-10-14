@@ -60,6 +60,7 @@ Not "looks like it runs" — automated, headless, and adversarial.
 
 ```bash
 node dev/plaza-verify.js     # 95 assertions: scene geometry, drag, minimise, audio graph, glitch, listbox a11y, contrast, responsive, console hygiene
+node dev/plaza-live.js       # 18 assertions against the DEPLOYED Pages URL (not the local file)
 node dev/plaza-probe4.js     # 10 viewport sizes (320 → 1920, incl. the 721px breakpoint edge and 740×380 landscape): overflow/overlap matrix
 node dev/plaza-perf.js       # frame cadence + DOM/heap budget under load
 node dev/plaza-probe3.js     # bust opacity vs a hidden backdrop, at four rotation angles
@@ -78,6 +79,7 @@ CHROME="/c/Program Files/Google/Chrome/Application/chrome.exe"   # or set $env:C
 | Suite | Result |
 | --- | --- |
 | `plaza-verify.js` | **95 / 95 pass**, 0 console errors, 0 warnings |
+| `plaza-live.js` (deployed) | **18 / 18 pass** — boots from the CDN, audio unlocks, 0 console errors |
 | `plaza-probe4.js` | all 10 sizes clean, `scrollWidth === innerWidth` everywhere |
 | grid scroll direction | model-warped correlation picks *toward viewer* at dt = 500 / 900 / 1300 ms |
 | bust opacity | within 1–3 / 255 of an identical backdrop at 0°, 34°, 65°, 90° — i.e. opaque |
